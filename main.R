@@ -19,17 +19,11 @@ df_transaction_raw <- read.csv2(files[8]) %>% as_tibble()
 df_account_raw 
 df_credit_card_raw
 df_client_raw 
-  # birth number - YYMMDD for men and YYMMDD+50DD for women
 df_disposition_raw
 df_district_raw 
 df_loan_raw
 df_order_raw 
 df_transaction_raw
-  # date = YYMMDD
-  # type = PRIJEM -> credit VYDAJ -> withdrawal
-  # operation = VYBER KARTOU -> credit card withdrawal; VKLAD -> credit_cash ; PREVOD Z UCTU -> collection_another_bank ; VYBER-> withdrawal_cash ; PREVOD NA UCET -> remittance_another_bank
-  # k_symbol = POJISTNE -> insurrance_payment ; SLUZBY -> payment_statement ; UROK -> interest_credited; SANKC. UROK -> interested_neg_balance; SIPO -> household_payment ; DUCHOD -> old_age_pension; UVER -> loan_payment
-
 
 
 
@@ -44,7 +38,11 @@ df_loan <- transformLoan(df_loan_raw)
 df_order <- transformOrder(df_order_raw)
 df_transaction <- transformTransaction(df_transaction_raw)
 
-df_loan
-df_order
-df_district
-
+summary(df_account)
+summary(df_credit_card)
+summary(df_client)
+summary(df_disposition)
+summary(df_district)
+summary(df_loan)
+summary(df_order)
+summary(df_transaction)
